@@ -28,6 +28,8 @@ from runner.response_runner import RespEvalRunner
 load_dotenv()
 
 MODEL_MAPPING = {
+    "openai/gpt-4.1": GPTRunner,
+    "openai/gpt-4o-mini": GPTRunner,
     "gpt-4o-2024-08-06": GPTRunner,
     "gpt-4-turbo-2024-04-09": GPTRunner,
     "claude-3-5-sonnet-20240620": ClaudeRunner,
@@ -62,7 +64,7 @@ def get_args():
     parser.add_argument("--input_file", type=str, default="data/ComplexFuncBench.jsonl")
     parser.add_argument("--model_name", type=str, required=True, choices=list(MODEL_MAPPING.keys()), help="The name of the model to be evaluated.")
     parser.add_argument('--exp_name', type=str, default='full-1000')
-    parser.add_argument("--vllm_url", type=str)
+    parser.add_argument("--vllm_url", type=str, default=os.environ['BASE_URL'])
     parser.add_argument("--proc_num", type=int, default=1)
     parser.add_argument("--debug", action="store_true")
 

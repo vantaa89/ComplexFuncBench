@@ -15,7 +15,7 @@ from collections import defaultdict
 
 
 MODEL_NAME_MAPPING = {
-    "gpt-4o-2024-08-06": "openai/gpt-4o-20240806"
+    "gpt-4o-2024-08-06": "openai/gpt-4o-20240806",
 }
 
 def actual_model_name(model_name):
