@@ -11,6 +11,7 @@ import multiprocessing
 from multiprocessing import Pool, Manager
 from functools import partial
 from tqdm import tqdm
+from dotenv import load_dotenv
 
 from utils.logger import Logger
 from utils.utils import *
@@ -22,6 +23,9 @@ from runner.qwen_runner import QwenRunner
 from runner.llama_runner import LlamaRunner
 from runner.mistral_runner import MistralRunner
 from runner.response_runner import RespEvalRunner
+
+
+load_dotenv()
 
 MODEL_MAPPING = {
     "gpt-4o-2024-08-06": GPTRunner,
@@ -40,7 +44,13 @@ MODEL_MAPPING = {
     "togetherai/Qwen/Qwen3-235B-A22B-FP8": GPTRunner,
     "togetherai/Qwen/Qwen3-235B-A22B-Instruct-2507-FP8": GPTRunner,
     "togetherai/Qwen/Qwen3-235B-A22B-Thinking-2507-FP8": GPTRunner,
+    "deepseek-ai/DeepSeek-V3-0324": GPTRunner, 
+    "deepseek-ai/DeepSeek-R1-0528": GPTRunner,
     "mistral-large-2407": GPTRunner,
+    "google/gemini-2.5-flash-thinking-off": GPTRunner,
+    "google/gemini-2.5-flash-thinking-on": GPTRunner,
+    "google/gemini-2.5-pro-thinking-off": GPTRunner,
+    "google/gemini-2.5-pro-thinking-on": GPTRunner,
 }
 
 
