@@ -42,7 +42,7 @@ class GPTModel:
     def _predict(self, prefix, text, **kwargs):
         try:
             completion = self.client.chat.completions.create(
-                model=MODEL_NAME_MAPPING(self.model_name),
+                model=actual_model_name(self.model_name),
                 messages=[
                     {"role": "system", "content": prefix},
                     {"role": "user", "content": text}
