@@ -51,6 +51,8 @@ MODEL_MAPPING = {
     "google/gemini-2.5-flash-thinking-on": GPTRunner,
     "google/gemini-2.5-pro-thinking-off": GPTRunner,
     "google/gemini-2.5-pro-thinking-on": GPTRunner,
+    "xai/grok-4": GPTRunner,
+    "togetherai/moonshotai/Kimi-K2-Instruct": GPTRunner
 }
 
 
