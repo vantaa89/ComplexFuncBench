@@ -3,7 +3,7 @@
 # Function to find and display available models
 find_available_models() {
     echo "Scanning for models available for report..."
-    find result -maxdepth 3 -type d -name "full-1000" 2>/dev/null | sed 's|/full-1000||' | sed 's|^result/||' | sort
+    find result -maxdepth 4 -type d -name "full-1000" 2>/dev/null | sed 's|/full-1000||' | sed 's|^result/||' | sort
 }
 
 if [ -z "$1" ]; then
